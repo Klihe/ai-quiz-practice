@@ -1,6 +1,6 @@
 {
     "title": "Quiz name",
-    "questions": [
+    "quiz": [
         {
             "question": "1. Question?",
             "answer": "Answer to first question."
