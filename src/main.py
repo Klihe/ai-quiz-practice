@@ -28,8 +28,8 @@ with quiz:
     st.title(data.get("title", "Untitled Quiz"))
     st.divider()
 
-    questions = data.get("questions", [])
-    for i, question in enumerate(questions):
+    quiz = data.get("quiz", [])
+    for i, question in enumerate(quiz):
         st.write(f"**{i+1}. {question.get('question', '')}**")
         user_answer = st.text_area("", key=f"{i}_answer")
 
@@ -47,7 +47,7 @@ with quiz:
 
         st.divider()
 
-    st.write(f"Your score: {score}/{len(data.get('questions', []))}")
+    st.write(f"Your score: {score}/{len(data.get('quiz', []))}")
 
 with add_delete:
     uploaded_files = st.file_uploader("Upload JSON files", type="json", accept_multiple_files=True)
