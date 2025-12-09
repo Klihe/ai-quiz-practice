@@ -1,7 +1,7 @@
 # Lightweight Quiz Application for Studying
 
 ## Description
-- A quiz application that checks answers to questions automatically using OpenAI API.
+- A quiz application that checks answers to questions automatically using OpenAI API. (How to get your own [OPENAI_API_KEY](https://www.analyticsvidhya.com/blog/2024/10/openai-api-key-and-add-credits/))
 - Application can have ciritical bugs and is for demo purposes only.
 
 ## Setup
