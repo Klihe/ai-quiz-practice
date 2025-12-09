@@ -1,0 +1,17 @@
+{
+    "title": "Quiz name",
+    "questions": [
+        {
+            "question": "1. Question?",
+            "answer": "Answer to first question."
+        },
+        {
+            "question": "2. Question",
+            "answer": "Answer to second question."
+        },
+        {
+            "question": "3. Question",
+            "answer": "Answer to third question"
+        }
+    ]
+}

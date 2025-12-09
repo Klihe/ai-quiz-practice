@@ -14,16 +14,21 @@ insert api key into `.env` file as `OPENAI_API_KEY=your_api_key`
 1. Create a new JSON file that follow the structure of `example.json` in the `resources` folder.
 ```json
 {
-  "questions": [
-    {
-      "question": "What is the capital of France?",
-      "answer": "Paris"
-    },
-    {
-      "question": "What is 2 + 2?",
-      "answer": "4"
-    }
-  ]
+    "title": "Quiz name",
+    "quiz": [
+        {
+            "question": "1. Question?",
+            "answer": "Answer to first question."
+        },
+        {
+            "question": "2. Question",
+            "answer": "Answer to second question."
+        },
+        {
+            "question": "3. Question",
+            "answer": "Answer to third question"
+        }
+    ]
 }
 ```
 2. Start application and upload the JSON file using the file uploader in `add_delete` tab.
