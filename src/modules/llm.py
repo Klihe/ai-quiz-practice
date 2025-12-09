@@ -8,7 +8,7 @@ load_dotenv()
 class LLM(ChatOpenAI):
     def __init__(self) -> None:
         super().__init__(
-            api_key=os.getenv("API_KEY"),
+            api_key=os.getenv("OPENAI_API_KEY"),
             model="gpt-4.1-2025-04-14"
         )
 
