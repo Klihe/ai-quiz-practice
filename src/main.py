@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
-from modules.llm import LLM
 
 import streamlit as st
+
+from modules.models.llm import LLM
 
 BASE = Path().parent
 RESOURCES_FOLDER = BASE / "resources"
@@ -33,17 +34,19 @@ with quiz:
         st.write(f"**{i+1}. {question.get('question', '')}**")
         user_answer = st.text_area("", key=f"{i}_answer")
 
-        if user_answer:
-            is_correct = llm.validate(question.get("question", ""), user_answer, question.get("answer", ""))
+        if user_answer and st.button("Submit Answer", key=f"{i}_submit"):
+                response = llm.ask_quiz(question.get("question", ""), user_answer, question.get("answer", ""))
 
-            marked_correct = st.checkbox("Mark as Correct", value=is_correct, key=f"{i}_correct")
-            if marked_correct:
-                st.success("Correct!")
-                score += 1
-            else:
-                st.error("Incorrect!")
+                marked_correct = st.checkbox("Mark as Correct", value=response.correct, key=f"{i}_correct")
+                if marked_correct:
+                    st.success("Correct!")
+                    score += 1
+                else:
+                    st.error("Incorrect!")
+                    st.warning("Hint: " + str(response.hint))
 
-            st.info("Correct answer: " + question.get("answer", ""))
+                st.info("Correct answer: " + question.get("answer", ""))
+                st.info(f"Your answer was {response.percentile:.2f}% close to the correct answer.")
 
         st.divider()
 
